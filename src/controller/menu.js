@@ -5,8 +5,8 @@
 const controller = {}
 
 
-controller.users_login = (req, res) => {
-    res.send("!PORTAL¡");
+controller.home = (req, res) => {
+    res.send("!INICIO¡");
 }
 
 module.exports = controller;

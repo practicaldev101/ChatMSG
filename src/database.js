@@ -30,7 +30,7 @@ const mysql = require("mysql");
  * @method createPool para crear un hilo de conexión a
  * la base de datos
  */
-const pool = mysql.createPool(database)
+const pool = mysql.createPool(database);
 
 pool.getConnection((err, conn)=>{
     if (err) {
@@ -54,6 +54,6 @@ pool.getConnection((err, conn)=>{
     return;
 })
 
-const pool = promisify(pool);
+pool.query = promisify(pool.query);
 
 module.exports = pool;
