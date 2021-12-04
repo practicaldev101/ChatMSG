@@ -6,7 +6,7 @@ const controller = {}
 
 
 controller.home = (req, res) => {
-    res.send("!INICIO¡");
+    res.render("layouts/sites/home");
 }
 
 module.exports = controller;

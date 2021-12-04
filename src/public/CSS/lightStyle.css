@@ -1,0 +1,118 @@
+.card_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 0;
+    background: transparent;
+}
+.card_button{
+    text-align: center;
+    width: 80%;
+    padding: 2mm 1mm;
+    background-color: #20cc10;
+    margin-left: calc(10% - 2mm);
+    border: 2px solid #fff;
+    border-radius: 2mm;
+    transition: 0.2s;
+    color: #fff;
+    margin-top: 1mm;
+}
+.card_button:hover{
+    border-color: #20cc10;
+    background-color: #fff;
+    color: #000;
+}
+.card_select{
+    border-color: #20cc10;
+    background-color: #fff;
+    color: #000;
+}
+.card_select:hover{
+    background-color: #20cc10;
+    border-color:#fff;
+    color: #fff;
+}
+.card{
+    width: 45%;
+    text-align: center;
+    min-width: 4cm;
+    max-width: 7cm;
+    height: 10cm;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 2mm;
+    overflow: hidden;
+    margin: 3mm;
+    padding: 1mm 1mm;
+    transition: 0.3s;
+    box-shadow: -0.5mm 0.5mm 0.5mm 0.5mm gray;
+}
+.card:hover{
+    background: #20cc10;
+    color: rgb(255, 255, 255);
+}
+.card_description{
+    width: 100%;
+    height: 50%;
+    overflow-y:auto;
+}
+.card>div:first-child{
+    width: 100%;
+    height: 40%;
+    background-image: url("https://cdn.pixabay.com/photo/2017/01/25/17/35/picture-2008484_1280.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 2mm;
+    overflow: hidden;
+}
+.card>div:first-child>p{
+    margin-top: 0;
+    text-align: center;
+    font-size: 150%;
+    color: white;
+    background-color: rgba(133, 133, 133, 0.5);
+}
+@media (max-width:615px) {
+    .card{
+        width: 70%;
+    }
+    .card_container{
+        justify-content: center;
+    }
+    
+}
+
+
+
+.button{
+    text-align: center;
+    width: 4cm;
+    padding: 1mm 1mm;
+    background-color: white;
+    border: 2px solid #20cc10;
+    border-radius: 2mm;
+    transition: 0.2s;
+    color: #000;
+    display: inline-block;
+    margin-right: auto;
+}
+.button:hover{
+    background-color: #20cc10;
+    border-color: #fff;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+

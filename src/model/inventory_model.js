@@ -1,6 +1,6 @@
 /**
- * @requires ./database para aplicar la configuración 
- * al servidor de la base de datos
+ * @requires ./database para poder hacer consultas a
+ * la base de datos
  */
 
 const pool = require("../database");

@@ -31,7 +31,6 @@ const mysql = require("mysql");
  * la base de datos
  */
 
-console.log(database);
 const pool = mysql.createPool(database);
 
 pool.getConnection((err, conn)=>{
