@@ -14,8 +14,19 @@ const menu = require("../controller/menu");
 
 
 const routes = app => {
+    /**
+     * @method get para cargar en la vista del cliente
+     * la página principal
+     */
     app.get("/", menu.home);
+    
+    /**
+     * @method get para cargar en la vista del cliente
+     * la página de inicio de sesión
+     */
+
     app.get("/portal", users.users_login);
+    
 }
 
 module.exports = routes;

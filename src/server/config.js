@@ -20,6 +20,19 @@ const path = require("path");
 
 const express = require("express");
 
+/**
+ * @requires express-session para poder crear sesiones
+ * en el servidor
+ */
+
+const session = require("express-session");
+
+/**
+ * @requires express-mysql-session permite almacenar las
+ * sesiones en la base de datos
+ */
+
+const mysql_session = require("express-mysql-session");
 
 /**
  * @requires express-handlebars para poder hacer uso
@@ -29,6 +42,20 @@ const express = require("express");
 
 const exphbs = require("express-handlebars").engine;
 
+/**
+ * @requires ./keys para obtener las credenciales de
+ * conexión a la base de datos
+ * @returns {database} que es el objeto que contiene
+ * las credenciales
+ */
+
+const { database } = require("../keys");
+
+/**
+ * @requires passport es el modulo que permite autenticaciones
+ * @returns {passport} que es el metodo para las autenticaciones
+ */
+const passport = require('passport');
 
 /**
  * @constant config para almacenar toda la configuración
@@ -75,6 +102,39 @@ const config = app => {
      */
 
     app.use("/public", express.static(path.join(app.get("views"), "../public")));
+
+    /**
+     * @method use para establecer uso de sesión
+     */
+
+    app.use(session({
+        secret: process.env.SECRET,
+        resave: true,
+        saveUninitialized: true,
+        store: new mysql_session(database)
+    }))
+
+    /**
+     * @method use para inicializar el sistema se sesiones
+     */
+
+    app.use(passport.initialize());
+
+    /**
+     * @method use para comenzar el uso de sesiones
+     * con passport
+     */
+
+    app.use(passport.session());
+
+    /**
+     * @method use para definir variables globales
+     */
+    
+    app.use((req, res, next)=>{
+        app.locals.user = req.user;
+        next();
+    })
 
     routes(app);
 }

@@ -13,8 +13,8 @@ const express = require("express");
 const config = require("./server/config");
 
 /**
- * @requires ./server/config para aplicar la configuración 
- * al servidor
+ * @requires ./database para aplicar la configuración 
+ * al servidor de la base de datos
  */
 
 const database = require("./database");

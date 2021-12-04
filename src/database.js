@@ -30,6 +30,8 @@ const mysql = require("mysql");
  * @method createPool para crear un hilo de conexión a
  * la base de datos
  */
+
+console.log(database);
 const pool = mysql.createPool(database);
 
 pool.getConnection((err, conn)=>{
