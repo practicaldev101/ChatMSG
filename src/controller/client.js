@@ -29,7 +29,7 @@ controller.create_delivery = (req, res, next) => {
     var name = "";
     const {client_name, description, table_code, lista} = req.body;
     if(lista){
-        if(!lista.lenght){
+        if(!lista.length){
             Inventory.getItemByCode(lista, async(err, data) => {
                 if(err){
                     total = total;
@@ -66,16 +66,13 @@ controller.create_delivery = (req, res, next) => {
             });
             return
         }
-        else if(lista.lenght > 0){
-            console.log("entró")
+        else if(lista.length > 0){
             for (const item of lista) {
                 Inventory.getItemByCode(item, async(err, data) => {
-                    console.log(data)
                     if(err){
                         total = total;
                     }
                     else{
-                        console.log(data)
                         if(data[0].PRICE){
                             
                             total = data[0].PRICE,

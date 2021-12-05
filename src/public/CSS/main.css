@@ -132,8 +132,9 @@ header .bg{
     box-shadow: -0.5mm 0.5mm 0.5mm 0.5mm gray;
 }
 .card:hover{
-    background: #20cc10;
-    color: rgb(255, 255, 255);
+    filter: brightness(120%);
+    background: rgba(255, 255, 255,.9);
+    color: black;
 }
 .card_description{
     width: 100%;
