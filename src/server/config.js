@@ -101,6 +101,8 @@ const config = app => {
      * application/x-www-form-urlencoded
      */
 
+    app.use(express.urlencoded({extended: false}))
+
     app.use("/public", express.static(path.join(app.get("views"), "../public")));
 
     /**

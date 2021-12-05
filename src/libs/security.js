@@ -61,9 +61,9 @@ security.isLoggedIn = (req, res, next) => {
  */
 security.isInPortal = (req, res, next) => {
     if (req.isAuthenticated()) {
-        return res.redirect('/portal');
+        return res.redirect('/portal/trabajador/pedidos');
     }
-    return res.render('signin');
+    return res.render('layouts/sites/login');
 };
 
 /**

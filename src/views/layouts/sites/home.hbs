@@ -1,9 +1,29 @@
+<section>
+    <form action="/cliente/pedido/" method="POST">
+    <div class="card_container" id="card_container">
+        {{#each inventory}}
+            <div class="card">
+            <div class="card_header">
+                <h2 class="card_title">{{NAME}}</h2>
+                <img class="card_img" src="https://image.winudf.com/v2/image1/Y29tLmFuZHJvLmZvb2RwcmVzZW50YXRpb25pZGVhX3NjcmVlbl8yXzE1NjcxNzM0MjZfMDA0/screen-2.jpg?fakeurl=1&type=.jpg" alt="">
+            </div>
+            <div class="card_description scroll">
+                <p>{{DESCRIPTION}}</p>
+                <p>{{PRICE}} COP</p>
+            </div>
+            <div class="custom-control custom-checkbox checkbox-xl">
+                <input name="lista" type="checkbox" class="custom-control-input" id="checkbox-{{REF_CODE}}"value="{{REF_CODE}}">
+                <label class="custom-control-label" for="checkbox-{{REF_CODE}}"></label>
+            </div>
+            </div>;
+        {{/each}}
+    </div>
+    {{> modals/modals}}
+    </form>
+</section>
 
-<div class="card_container" id="card_container">
-    <input type="hidden" id="ejemplo" value="14134">
-</div>
-
-<div>
-    <input type="button" value="Comprar" class="button" id="comprarButton">
-</div>
-
+<section>
+    <div>
+        <input type="button" value="Comprar" class="button" id="comprarButton" data-toggle="modal" data-target="#exampleModal">>
+    </div>
+</section>
