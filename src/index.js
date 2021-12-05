@@ -19,6 +19,9 @@ const config = require("./server/config");
 
 const database = require("./database");
 
+
+require("./libs/passport");
+
 const app = express();
 
 config(app)

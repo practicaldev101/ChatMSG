@@ -1,6 +1,15 @@
-
 <div class="bg"></div>
-<nav>
-    <div role="button" class="loginButton">Iniciar Sesión</div>
+<nav class="nav_app">
+    {{#if user}}
+        <a role="button" class="loginButton" href="/portal/salir">Cerrar Sesión&nbsp;<i class="fas fa-sign-out-alt"></i></a>
+    {{else}}
+        <a role="button" class="loginButton" href="/portal/">Iniciar Sesión</a>
+    {{/if}}
+    
 </nav>
-<img src="public/img/logo3.png" alt="logo" height="70%">
+{{#if user}}
+    <a href="/portal/trabajador/pedidos"><img class="logo" src="/public/img/logo.png" alt="logo" height="70%"></a>
+{{else}}
+        <a href="/"><img class="logo" src="/public/img/logo.png" alt="logo" height="70%"></a>
+{{/if}}
+
