@@ -69,23 +69,8 @@ header .bg{
 
 
 /*---------------footer-------------------*/
-footer{
-    z-index: -1;
-    width: 100%;
-    height: 2cm;
-    background: #01fe91;
-    margin-top: 1cm;
-}
-footer .bg{
-    position: relative;
-    margin-left: calc(70% - 3cm);
-    width: 30%;
-    height: 0;
-    border-right: 3cm solid transparent;
-    border-bottom: 2cm solid #000000;
-    transform: rotateX(180deg);
-    transform: rotateY(180deg);
-}
+
+
 
 /* Cards Configuration*/
 .card_container{
@@ -218,6 +203,12 @@ footer .bg{
 }
 
 /* Buttons Styles */
+
+.container_button{
+    margin: .5cm 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
 .button{
     text-align: center;
     width: 4cm;
@@ -227,8 +218,6 @@ footer .bg{
     border-radius: 2mm;
     transition: 0.2s;
     color: #000;
-    display: inline-block;
-    margin-right: auto;
 }
 .button:hover{
     background-color: #20cc10;
@@ -308,6 +297,139 @@ footer .bg{
     width: 3cm;
     height: 1cm;
 }
+
+/*FOOTER*/
+
+footer{
+    margin-top: 1cm;
+    width: 100%;
+    background: #202020;
+    color: white;
+    width: 100%;
+    height: 40px;
+}
+
+.container-footer-all{
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    background: #202020;
+}
+
+.container-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.colum1{
+    max-width: 400px;
+}
+
+.colum1 h1{
+    font-size: 22px;
+}
+
+.colum1 p{
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+}
+
+.colum2{
+    max-width: 400px;
+}
+
+.colum2 h1{
+    font-size: 22px;
+}
+
+.colum2 .row{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img{
+    width: 36px;
+    height: 36px;
+}
+
+.row label{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #c7c7c7;
+}
+
+.colum3{
+    max-width: 400px;
+}
+
+.colum3 h1{
+    font-size: 22px;
+}
+
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img{
+    width: 36px;
+    height: 36px;
+    color: white;
+}
+
+.row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.container-footer{
+    width: 100%;
+    background: #101010;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.copyright{
+    color: #C7C7C7;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: rgb(255, 180, 180);
+    font-weight: bold;
+}
+
+.information a{
+    text-decoration: none;
+    color: #c7c7c7;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .container-body{
+        flex-wrap: wrap;
+    }
+
+    .colum1{
+        max-width: 100%;
+    }
+
+    .colum3,
+    .colum2{
+        margin-top: 40px;
+    }
+}
+
 
 @media (max-width:615px) {
     .logo{

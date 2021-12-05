@@ -69,35 +69,6 @@ passport.use('local.signin', new strategy({
 }));
 
 /**
- * @method use para definir el registro de usuario
- * usando passport
- */
-passport.use('local.signup', new strategy({
-    usernameField: 'email_signup',
-    passwordField: 'password_signup',
-    passReqToCallback: true
-}, async(req, username, password, done) => {
-    const { fullname_signup, phone_signup, addr_signup } = req.body;
-
-    var newUser = {
-        uuid: uuidv4(),
-        fullname: fullname_signup,
-        phone: phone_signup,
-        addr: addr_signup,
-        email: username,
-        pass: password
-    };
-
-    var result = await pool.query('SELECT UUID FROM USER WHERE ?', [{ username: username }]);
-    if (result.length == 0) {
-        newUser.pass = await security.encryptPassword(password);
-        await pool.query('INSERT INTO USER SET ?', [newUser]);
-
-        done(null, newUser);
-    }
-}));
-
-/**
  * @method serializeUser permite almacenar el usuario creado
  * en la sesion
  */

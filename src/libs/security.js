@@ -50,7 +50,10 @@ security.isLoggedIn = (req, res, next) => {
     if (req.isAuthenticated()) {
         return next();
     }
-    return res.redirect('/');
+    else{
+        return res.redirect('/');
+    }
+    
 };
 
 /**
@@ -62,8 +65,10 @@ security.isLoggedIn = (req, res, next) => {
 security.isInPortal = (req, res, next) => {
     if (req.isAuthenticated()) {
         return res.redirect('/portal/trabajador/pedidos');
+    }else{
+        return res.render('layouts/sites/login');
     }
-    return res.render('layouts/sites/login');
+    
 };
 
 /**

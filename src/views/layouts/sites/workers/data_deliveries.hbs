@@ -12,17 +12,26 @@
             <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Pedidos</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Pedido</th>
                 <th scope="col">Mesa</th>
-                <th scope="col">Total</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Entregado</th>
             </tr>
             </thead>
             <tbody>
+            {{#each deliveries}}
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{{CLIENT_NAME}}</td>
+                <td>{{DESCRIPTION}}</td>
+                <td>{{DELIVERY}}</td>
+                <td>{{TABLE_CODE}}</td>
+                <td>{{TOTAL}}</td>
+                <td>{{CREATED_AT}}</td>
+                <td><a class="btn btn-block btn-primary" href="/portal/trabajador/pedidos/eliminar/{{UUID}}">ENTREGADO</a></td>
             </tr>
+            {{/each}}
             </tbody>
             </table>
         </div>

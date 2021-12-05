@@ -49,12 +49,27 @@ Pending.delete = async(id, done)=>{
             return;
         }
         else{
-            done(null, newItem);
+            done(null, "Eliminado con éxito");
         }
     });
 }
 Pending.getAllDeliveries = async(any, done)=>{
     const rest = await pool.query("SELECT * FROM PENDING",(err, data)=>{
+        if(err){
+            console.log(err);
+            done(null, err);
+            return;
+        }
+        else{
+            done(null, data);
+        }
+    });
+}
+
+Pending.getDeliveriesByKey = async(key, done)=>{
+
+    key = '%' + key + '%';
+    const rest = await pool.query("SELECT * FROM PENDING WHERE CLIENT_NAME LIKE ? OR TABLE_CODE LIKE ?",[key, key], (err, data)=>{
         if(err){
             console.log(err);
             done(null, err);

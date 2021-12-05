@@ -52,7 +52,7 @@ const routes = app => {
      * @method get para cerrar sesión
      */
 
-    app.get("/portal/salir", users.logout);
+    app.get("/portal/salir", security.isLoggedIn,users.logout);
 
     /**
      * @method get que recibe los datos del usuario
@@ -60,14 +60,26 @@ const routes = app => {
      * validas
      */
 
-    app.post("/portal/ingresar",users.users_login)
+    app.post("/portal/ingresar", users.users_login)
 
     /**
      * @method get que recibe los datos del usuario
      * e inicia sesión si las credenciales son
      * validas
      */
-    app.get("/portal/trabajador/pedidos",workers.pending_view)
+    app.get("/portal/trabajador/pedidos", security.isLoggedIn,workers.pending_view);
+    
+    /**
+     * @method get que elimina un pedido de la base de datos
+     * mediante el uuid
+     */
+    app.get("/portal/trabajador/pedidos/buscar/", security.isLoggedIn,workers.pending_search)
+
+    /**
+     * @method get que elimina un pedido de la base de datos
+     * mediante el uuid
+     */
+    app.get("/portal/trabajador/pedidos/eliminar/:uuid", security.isLoggedIn,workers.pending_done)
     
     /**
      * @method get que recibe los datos del usuario
