@@ -47,7 +47,6 @@ passport.use('local.signin', new strategy({
     passwordField: 'worker_password',
     passReqToCallback: true
 }, async(req, username, password, done) => {
-    console.log(uuidv4())
     const result = await pool.query('SELECT * FROM USER WHERE ?', [{ username: username }],async(err, user)=>{
         if(err){
             done(null, err);

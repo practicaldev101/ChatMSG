@@ -29,13 +29,12 @@ controller.create_delivery = (req, res, next) => {
     var name = "";
     const {client_name, description, table_code, lista} = req.body;
     if(lista){
-        if(!lista.length){
+        if(!Array.isArray(lista)){
             Inventory.getItemByCode(lista, async(err, data) => {
                 if(err){
                     total = total;
                 }
                 else{
-                    console.log(data);
                     if(data[0].PRICE){  
                         total = data[0].PRICE,
                         name = data[0].NAME
@@ -60,13 +59,10 @@ controller.create_delivery = (req, res, next) => {
                             }
                         });
                     }
-                    return;    
                 }
-                return;
             });
-            return
         }
-        else if(lista.length > 0){
+        else if(Array.isArray(lista)){
             for (const item of lista) {
                 Inventory.getItemByCode(item, async(err, data) => {
                     if(err){
@@ -101,8 +97,8 @@ controller.create_delivery = (req, res, next) => {
                 });
             
     }
-    }
     res.redirect("/");
+    }
 }}
     
     

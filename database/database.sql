@@ -38,3 +38,12 @@ CREATE TABLE USER(
 );
 
 INSERT INTO USER SET UUID='f2866729-0b05-466a-b947-e2c249a3fcfc', NAME='Juan Perez Solorzano', DELIVERIES=0, USERNAME='usolp', EMAIL='solorzanoperes@gmail.com', ROL='Trabajador', PASSWORD='$2a$10$4JoEs.Zyy21ObkIAjUtMm.P6wzrKcmpOwxv2rKYsF/A4FIJ7ib6Rq', CREATED_AT=NULL; /*PASSWORD->123*/
+
+INSERT INTO INVENTORY SET UUID='a4c90714-66fd-4bd0-9517-b7f46734b82b',NAME='Bandeja Paisa', DESCRIPTION='¡Perfecto plato para saciar el hambre, incluye frijoles, patacones, huevos fritos y arroz!', PRICE=12500, REF_CODE=0342, AVAILABLE=1, IMAGE_PATH='0342.jpg', CREATED_AT=NULL;
+INSERT INTO INVENTORY SET UUID='dec99951-d1f1-4d66-9b29-81acd301fb84',NAME='Tronco Pollo', DESCRIPTION='No hace basta tener hambre para saciarte de este plato ¿estás seguro?', PRICE=45000, REF_CODE=0523, AVAILABLE=1, IMAGE_PATH='0523.jpg', CREATED_AT=NULL;
+INSERT INTO INVENTORY SET UUID='59e7fb3d-f358-48ee-8b2b-449514108104',NAME='Carne Mixta', DESCRIPTION='Carne variada con espectaculares sabores !pruebalo¡', PRICE=35000, REF_CODE=4563, AVAILABLE=1, IMAGE_PATH='4563.jpg', CREATED_AT=NULL;
+INSERT INTO INVENTORY SET UUID='6bb20a29-58f5-44db-88c1-0719366af099',NAME='Pollo Frito', DESCRIPTION='!Pollo devorador, no dudes en acabar con ellos¡', PRICE=20000, REF_CODE=5632, AVAILABLE=1, IMAGE_PATH='5632.jpg', CREATED_AT=NULL;
+INSERT INTO INVENTORY SET UUID='a63a254b-4caf-465c-b1f8-14ea1fcf4510',NAME='Albondigas ensalsadas', DESCRIPTION='Están lloviendo albondigas, come las que puedas y disfruta su jugoso sabor.', PRICE=10000, REF_CODE=3256, AVAILABLE=1, IMAGE_PATH='3256.jpg', CREATED_AT=NULL;
+INSERT INTO INVENTORY SET UUID='680c1a01-ac41-4c48-80e9-546795347c70',NAME='Pollo a la plancha', DESCRIPTION='Pollo al punto, jugoso, y con sabores magnificos', PRICE=28000, REF_CODE=7834, AVAILABLE=1, IMAGE_PATH='7834.jpg', CREATED_AT=NULL;
+INSERT INTO INVENTORY SET UUID='2b55f608-99a0-4aea-b856-08496aba3182',NAME='Muslo de pollo', DESCRIPTION='Las patas corren, cometelas antes de que derramen su esplendido sabor', PRICE=56000, REF_CODE=5432, AVAILABLE=1, IMAGE_PATH='5432.jpg', CREATED_AT=NULL;
+INSERT INTO INVENTORY SET UUID='5b779949-f093-43d5-874c-11caa4c49fb0',NAME='Arroz Mixto', DESCRIPTION='Incluye porciones de carne, !disfrutalo¡', PRICE=35000, REF_CODE=2453, AVAILABLE=1, IMAGE_PATH='2453.jpg', CREATED_AT=NULL;
